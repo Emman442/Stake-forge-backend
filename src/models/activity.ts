@@ -4,9 +4,11 @@ export interface IActivity extends Document {
   user: string;           // wallet address
   action: "stake" | "claim" | "unstake";
   amount: number;
-  lock_time: number;      // in seconds
+  lock_time?: number|null;      // in seconds
   timestamp: number;      // UNIX timestamp
   transaction: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 const activitySchema = new Schema({
