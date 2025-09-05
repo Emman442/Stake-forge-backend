@@ -9,6 +9,7 @@ export interface IActivity extends Document {
   transaction: string;
   createdAt: Date;
   updatedAt: Date;
+  tokenSymbol?: string; // Optional token symbol
 }
 
 const activitySchema = new Schema({
@@ -18,5 +19,6 @@ const activitySchema = new Schema({
   lock_time: { type: Number},
   timestamp: { type: Number, required: true },
   transaction: { type: String, required: true },
+  tokenSymbol: { type: String, default: "STAKE" } // Default token symbol
 }, {timestamps: true});
 export default mongoose.model("Activity", activitySchema);
