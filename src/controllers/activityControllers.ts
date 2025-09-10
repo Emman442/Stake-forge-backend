@@ -14,8 +14,7 @@ const getActivity = async (req: Request, res: Response) => {
         if (tokenSymbol) {
             query.tokenSymbol = tokenSymbol;
         }
-
-        const activities: IActivity[] = await Activity.find(query).sort({ createdAt: -1 });
+        const activities: IActivity[] = await Activity.find(query).sort({ createdAt: -1 }).limit(10);
 
         res.json(activities);
     } catch (error) {
@@ -26,7 +25,7 @@ const getActivity = async (req: Request, res: Response) => {
 
 
 // Add a new activity (to be called when user stakes/claims/unstakes)
- const addActivity = async (req: Request, res: Response) => {
+const addActivity = async (req: Request, res: Response) => {
     try {
         const { user, action, amount, lock_time, timestamp, transaction, tokenSymbol } = req.body;
         const activity = new Activity({ user, action, amount, lock_time, timestamp, transaction, tokenSymbol });
@@ -39,4 +38,4 @@ const getActivity = async (req: Request, res: Response) => {
 };
 
 
-export {getActivity, addActivity };
+export { getActivity, addActivity };
