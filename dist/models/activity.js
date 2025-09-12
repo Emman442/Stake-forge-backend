@@ -6,6 +6,7 @@ const activitySchema = new Schema({
     lock_time: { type: Number },
     timestamp: { type: Number, required: true },
     transaction: { type: String, required: true },
+    tokenSymbol: { type: String, default: "STAKE" } // Default token symbol
 }, { timestamps: true });
 export default mongoose.model("Activity", activitySchema);
 //# sourceMappingURL=activity.js.map

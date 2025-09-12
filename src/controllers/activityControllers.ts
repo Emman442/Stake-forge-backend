@@ -14,8 +14,7 @@ const getActivity = async (req: Request, res: Response) => {
         if (tokenSymbol) {
             query.tokenSymbol = tokenSymbol;
         }
-        const activities: IActivity[] = await Activity.find(query).sort({ createdAt: -1 }).limit(10);
-
+        const activities: IActivity[] = await Activity.find(query).sort({ createdAt: -1 }).limit(10).exec();
         res.json(activities);
     } catch (error) {
         console.error("Error fetching activity:", error);

@@ -8,6 +8,7 @@ export interface IActivity extends Document {
     transaction: string;
     createdAt: Date;
     updatedAt: Date;
+    tokenSymbol?: string;
 }
 declare const _default: mongoose.Model<{
     createdAt: NativeDate;
@@ -18,6 +19,7 @@ declare const _default: mongoose.Model<{
     amount: number;
     timestamp: number;
     transaction: string;
+    tokenSymbol: string;
     lock_time?: number | null;
 }, {}, {}, {}, mongoose.Document<unknown, {}, {
     createdAt: NativeDate;
@@ -28,6 +30,7 @@ declare const _default: mongoose.Model<{
     amount: number;
     timestamp: number;
     transaction: string;
+    tokenSymbol: string;
     lock_time?: number | null;
 }, {}, {
     timestamps: true;
@@ -40,6 +43,7 @@ declare const _default: mongoose.Model<{
     amount: number;
     timestamp: number;
     transaction: string;
+    tokenSymbol: string;
     lock_time?: number | null;
 } & {
     _id: mongoose.Types.ObjectId;
@@ -56,6 +60,7 @@ declare const _default: mongoose.Model<{
     amount: number;
     timestamp: number;
     transaction: string;
+    tokenSymbol: string;
     lock_time?: number | null;
 }, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
     createdAt: NativeDate;
@@ -66,6 +71,7 @@ declare const _default: mongoose.Model<{
     amount: number;
     timestamp: number;
     transaction: string;
+    tokenSymbol: string;
     lock_time?: number | null;
 }>, {}, mongoose.ResolveSchemaOptions<{
     timestamps: true;
@@ -78,6 +84,7 @@ declare const _default: mongoose.Model<{
     amount: number;
     timestamp: number;
     transaction: string;
+    tokenSymbol: string;
     lock_time?: number | null;
 }> & {
     _id: mongoose.Types.ObjectId;
